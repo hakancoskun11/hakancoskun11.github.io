@@ -1,0 +1,532 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hakan Coşkun</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+	body {
+  font-family: 'Raleway', sans-serif;
+  background: rgba(242, 242, 242, .6);
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box
+}
+
+/*NAVBAR*/
+.navbar {
+  background-color: #31b0d5;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  display: flex;
+  justify-content: center;
+}
+
+.navbar a {
+  font-weight: 200;
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.anchor {
+  display: block;
+  position: relative;
+  top: -70px;
+  visibility: hidden;
+}
+
+/*JUMBOTRON*/
+.jumbotron {
+  height: 100vh; /*height to 100% of view height*/
+  background: #31b0d5; /*background color to blue*/
+  margin-bottom: 0; /*no bottom margin*/
+
+  display: flex;
+  flex-direction: column;
+}
+
+.jumbotron-text {
+  /*TAGLINE UNDER NAME*/
+  font-weight: 400;
+  font-size: 2em;
+  color: white;
+  text-align: center;
+  padding-top: 150px;
+}
+
+.jumbotron-text h1 {
+  /*YOUR NAME*/
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 3em;
+  margin-bottom: 0;
+}
+
+.jumbotron-text p {
+  margin: 0;
+}
+
+/*SOCIAL LINKS*/
+.ul-social {
+  text-align: center;
+  padding-left: 0;
+}
+
+.li-social-links {
+  display: inline-block;
+  list-style: none;
+}
+
+.social {
+  font-size: 2em;
+  color: white;
+  padding: 20px;
+}
+
+/*ARROW LINK*/
+#down-arrow {
+  /*position: absolute;
+  width: 100%;*/
+  margin-top: auto;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+#down-arrow a {
+  color: white;
+}
+
+/*CONTENT*/
+.container {
+  /*sets up flexbox*/
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+}
+
+.white {
+  background: white;
+}
+
+.side-content {
+  flex: 0 0 16.6%;
+}
+
+.main-content {
+  flex: 0 0 66.6%;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.side-content-sm {
+  flex: 0 0 10%;
+}
+
+.main-content-lg {
+  flex: 0 0 80%;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.box-shadow {
+  -webkit-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.75);
+}
+
+h2 {
+  font-weight: 200;
+  font-size: 2rem;
+  color: #31b0d5;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.content-body {
+  line-height: 1.5;
+  color: rgba(0,0,0,.75);
+}
+
+/*EDUCATION*/
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+  margin-bottom: 30px;
+}
+
+.card-header {
+  padding: .75rem 1.25rem;
+  background-color: white;
+  border-bottom: 1px solid rgba(0,0,0,.075);
+  border-top-left-radius: .25rem;
+  border-top-right-radius: .25rem;
+}
+
+.card-content {
+  padding: .25rem 1.25rem;
+  flex: 1 1 auto;
+}
+
+h4 {
+  margin: 0;
+  font-weight: 400;
+  color: grey;
+}
+
+.job-title {
+  float: right;
+}
+
+/*PROJECTS*/
+.project-card {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: 5px;
+  margin-bottom: 30px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.08), 0 3px 6px rgba(0,0,0,0.15);
+}
+
+.project-image {
+  flex: 1 0 auto;
+}
+
+.project-image img {
+  display: block;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.project-content {
+  flex: 1 1 auto;
+  padding: 1.25rem;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/*SKILLS*/
+.ul-skills {
+  text-align: center;
+  padding-left: 0;
+}
+
+.li-skills {
+  display: inline-block;
+  margin: 7px;
+  padding: 5px 10px;
+  color: white;
+  background: #2b2f30;
+  list-style: none;
+  cursor: default;
+  font-size: 1.2em;
+}
+
+/*CONTACT*/
+.blue {
+  background: #3498db;
+  text-align: center;
+}
+
+.contact {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.contact input, .contact textarea {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: none;
+  margin-bottom: 10px;
+  background: #1d6fa5;
+  color: #fff;
+  -webkit-transition: .5s ease all;
+  transition: .5s ease all;
+}
+
+.contact textarea {
+  height: 150px;
+  resize: none;
+}
+
+.contact button {
+  display: block;
+  width: 100%;
+  background: #fff;
+  border-radius: 4px;
+  padding: 5px 10px;
+  border: none;
+  color: #3498db;
+  font-weight: 700;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  -webkit-transition: .5s ease all;
+  transition: .5s ease all;
+}
+
+.white-text {
+  color: white;
+}
+
+    </style>
+  </head>
+  <body>
+
+    <!-- BEGIN NAVBAR -->
+    <div class="navbar">
+      <a href="#about">Hakkında</a>
+      <a href="#experience">Deneyim</a>
+      <a href="#education">Eğitim</a>
+      <a href="#projects">Projeler</a>
+      <a href="#skills">Yetenekler</a>
+      <a href="#contact">İletişim</a>
+    </div>
+    <!-- END NAVBAR -->
+
+    <div class="container">
+
+      <!-- HEADER -->
+      <div class="jumbotron">
+        <div class="jumbotron-text">
+          <h1>Hakan Coşkun</h1>
+          <p>Yazılım Mühendisi</p>
+        </div>
+        <div class="jumbotron-social">
+          <ul class="ul-social">
+            <li class="li-social-links">
+              <a class="social" href="https://github.com/hakancoskun11" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+            </li>
+            <li class="li-social-links">
+              <a class="social" href="https://linkedin.com/in/hakancoskun11" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div id="down-arrow">
+          <span><a href="#about"><i class="fa fa-chevron-down" aria-hidden="true"></i></a></span>
+        </div>
+      </div>
+      <!-- END HEADER -->
+
+
+
+      <!-- BEGIN ABOUT -->
+      <div class="row white box-shadow">
+        <div class="side-content"></div>
+        <div class="main-content">
+          <div class="content-header">
+            <a class="anchor" name="about"></a>
+            <h2>Hakkında</h2>
+          </div>
+          <div class="content-body">
+            <p>2021 yılında üniversite eğitimimi tamamlayarak bilgisayar mühendisliği hayatıma başladım. Üniversite hayatım boyunca çeşitli projelerde çalıştım.</p>
+            <p>Şuanda bir yazılım firmasında yazılım geliştirme uzmanı olarak görev yapmaktayım. Gerek iş hayatında gerekse kişisel çalışmalarımda projeler geliştirirek kendimi geliştirmeye
+              ve her gün yeni şeyler öğrenmeye çalışıyorum.
+            </p>
+          </div>
+        </div>
+        <div class="side-content"></div>
+      </div>
+      <!-- END ABOUT -->
+
+      <!-- BEGIN EXPERIENCE -->
+      <div class="row">
+        <div class="side-content"></div>
+        <div class="main-content">
+          <div class="content-header">
+            <a class="anchor" name="experience"></a>
+            <h2>Deneyim</h2>
+          </div>
+          <!-- CARD #1 -->
+          <div class="content-body">
+            <div class="card">
+              <div class="card-header">
+                <h4>Etiya <span class="job-title">Yazılım Geliştirme Uzmanı</span></h4>
+              </div>
+              <div class="card-content">
+                <p>
+                  Halihazırda devam ettiğim işimde yazılım danışmanlığını yaptığımız projedeki geliştirmeleri -frontent ve backend-, canlıya alımı ve yazılımsal desteği sağlamakla görevliyim.
+                  Biri ana projem olmak üzere iki farklı projede yazılım geliştirici olarak çalışıyorum.
+                </p>
+              </div>
+            </div>
+
+          <!-- CARD #2 -->
+
+            <div class="card">
+              <div class="card-header">
+                <h4>Bakırköy Belediyesi <span class="job-title">Stajyer</span></h4>
+              </div>
+              <div class="card-content">
+                <p>Bilgisayar Mühendisliği stajımı gerçekleştirdiğim iş yerinde Python dilini kullanarak web geliştirme ve script yazımı hakkında bir çok şey öğrendim.</p>
+              </div>
+            </div>
+
+    
+      <!-- END EXPERIENCE -->
+
+      <!-- BEGIN EDUCATION -->
+      <div class="row white box-shadow">
+        <div class="side-content"></div>
+        <div class="main-content">
+          <div class="content-header">
+            <a class="anchor" name="education"></a>
+            <h2>Eğitim</h2>
+          </div>
+          <div class="content-body">
+
+            <!-- EDUCATION 1 -->
+            <div class="card">
+              <div class="card-header">
+                <h4>Tekirdağ Namık Kemal Üniversitesi <span class="job-title">2021</span></h4>
+              </div>
+              <div class="card-content">
+                <p>Bilgisayar Mühendisliği lisans eğitimimi tamamladım.</p>
+              </div>
+            </div>
+            <!-- EDUCATION 2 -->
+            <div class="card">
+              <div class="card-header">
+                <h4>Mehmet Niayzi Altuğ Anadolu Lisesi <span class="job-title">2017</span></h4>
+              </div>
+              <div class="card-content">
+                <p>Lise eğitimimi tamamladım.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="side-content"></div>
+      </div>
+      <!-- END EDUCATION -->
+
+      <!-- BEGIN PROJECTS -->
+      <div class="row">
+        <div class="side-content-sm"></div>
+        <div class="main-content-lg">
+          <div class="content-header">
+            <a class="anchor" name="projects"></a>
+            <h2>Projects</h2>
+          </div>
+          <div class="content-body">
+            <!-- CARD #1 -->
+            <div class="project-card">
+              <div class="project-image">
+                <img src="http://placehold.it/250x350">
+              </div>
+              <div class="project-content">
+                <h4>Project Name</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <a href="#">Link Text</a>
+              </div>
+            </div>
+            <!-- CARD #2 -->
+            <div class="project-card">
+              <div class="project-image">
+                <img src="http://placehold.it/250x350">
+              </div>
+              <div class="project-content">
+                <h4>Project Name</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <a href="#">Link Text</a>
+              </div>
+            </div>
+            <!-- CARD #3 -->
+            <div class="project-card">
+              <div class="project-image">
+                <img src="http://placehold.it/250x350">
+              </div>
+              <div class="project-content">
+                <h4>Project Name</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <a href="#">Link Text</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="side-content-sm"></div>
+      </div>
+      <!-- END PROJECTS -->
+
+      <!-- BEGIN SKILLS -->
+      <div class="row white box-shadow">
+        <div class="side-content"></div>
+        <div class="main-content">
+          <div class="content-header">
+            <a class="anchor" name="skills"></a>
+            <h2>Yetenekler</h2>
+          </div>
+          <div class="content-body">
+            <ul class="ul-skills">
+              <li class="li-skills">Java</li>
+              <li class="li-skills">Spring Boot</li>
+              <li class="li-skills">Oracle</li>
+              <li class="li-skills">Sql</li>
+              <li class="li-skills">Html</li>
+              <li class="li-skills">CSS</li>
+              <li class="li-skills">Javascript</li>
+              <li class="li-skills">React</li>
+              <li class="li-skills">Aspnet.Core MVC</li>
+              <li class="li-skills">Flutter</li>
+            </ul>
+          </div>
+        </div>
+        <div class="side-content"></div>
+      </div>
+      <!-- END SKILLS -->
+
+      <!-- BEGIN CONTACT -->
+
+      <div class="row blue">
+        <div class="side-content"></div>
+        <div class="main-content">
+          <div class="content-header">
+            <a class="anchor" name="contact"></a>
+            <h2 class="white-text">Contact Me</h2>
+          </div>
+          <div class="contact content-body">
+            <form method="POST" action="https://formspree.io/email@email.com">
+                <input type="hidden" name="_subject" value="Contact request from personal website" />
+                <input type="email" name="_replyto" placeholder="Your email" required>
+                <textarea name="message" placeholder="Your message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+          </div>
+        </div>
+        <div class="side-content"></div>
+      </div>
+      <!-- END CONTACT -->
+
+      <!-- BEGIN FOOTER -->
+      <div class="row">
+        <div class="side-content"></div>
+        <div class="main-content">
+          <div class="content-header">
+          </div>
+          <div class="content-body">
+            <p>HAKAN COŞKUN 2022</p>
+          </div>
+        </div>
+        <div class="side-content"></div>
+      </div>
+      <!-- END FOOTER -->
+
+    </div>
+  </body>
+</html>

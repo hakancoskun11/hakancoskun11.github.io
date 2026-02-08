@@ -1,557 +1,272 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="tr">
 <head>
-    <meta charset="utf-8">
-    <title>Hakan Coşkun</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        body {
-            font-family: 'Raleway', sans-serif;
-            background: rgba(242, 242, 242, .6);
-            margin: 0;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hakan Coşkun | Yazılımcı</title>
+  <meta name="description" content="Hakan Coşkun - Yazılımcı Portfolio. Deneyimler, projeler ve iletişim." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f172a;        /* slate-900 */
+      --card:#111827;      /* gray-900 */
+      --muted:#94a3b8;     /* slate-400 */
+      --text:#e5e7eb;      /* gray-200 */
+      --primary:#22c55e;   /* green-500 */
+      --accent:#38bdf8;    /* sky-400 */
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto; 
+      background:radial-gradient(1200px 600px at 10% -10%, #0b1220 0%, var(--bg) 40%);
+      color:var(--text);
+    }
+    a{color:inherit; text-decoration:none}
+    .container{max-width:1100px; margin:auto; padding:24px}
+    header{position:sticky; top:0; backdrop-filter: blur(8px); background:rgba(15,23,42,.6); border-bottom:1px solid rgba(148,163,184,.15)}
+    nav{display:flex; align-items:center; justify-content:space-between}
+    nav .logo{font-weight:800; letter-spacing:.3px}
+    nav ul{display:flex; gap:18px; list-style:none; padding:0; margin:0}
+    nav li a{opacity:.9}
+    nav li a:hover{color:var(--primary)}
 
-        * {
-            box-sizing: border-box
-        }
+    .hero{display:grid; grid-template-columns:1.2fr .8fr; gap:28px; padding:72px 0}
+    .badge{display:inline-block; padding:6px 10px; border:1px solid rgba(56,189,248,.4); color:var(--accent); border-radius:999px; font-size:12px}
+    h1{font-size:44px; line-height:1.1; margin:14px 0}
+    .lead{color:var(--muted); font-size:18px}
+    .cta{display:flex; gap:14px; margin-top:22px}
+    .btn{padding:12px 16px; border-radius:12px; border:1px solid rgba(148,163,184,.2)}
+    .btn.primary{background:linear-gradient(135deg, var(--primary), #16a34a); color:#052e16; border:none}
+    .card{background:linear-gradient(180deg, rgba(17,24,39,.9), rgba(17,24,39,.6)); border:1px solid rgba(148,163,184,.15); border-radius:20px; padding:22px}
 
-        /*NAVBAR*/
-        .navbar {
-            background-color: #31b0d5;
-            position: fixed;
-            /* Set the navbar to fixed position */
-            top: 0;
-            /* Position the navbar at the top of the page */
-            width: 100%;
-            /* Full width */
-            display: flex;
-            justify-content: center;
-        }
+    section{padding:56px 0}
+    section h2{font-size:28px; margin-bottom:16px}
+    .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+    .item h3{margin:0 0 8px}
+    .muted{color:var(--muted)}
 
-        .navbar a {
-            font-weight: 200;
-            color: white;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
+    .projects{grid-template-columns:repeat(2,1fr)}
+    .project .tags{display:flex; gap:8px; flex-wrap:wrap}
+    .tag{font-size:12px; padding:4px 8px; border-radius:999px; border:1px solid rgba(148,163,184,.25)}
 
-        .anchor {
-            display: block;
-            position: relative;
-            top: -70px;
-            visibility: hidden;
-        }
+    footer{border-top:1px solid rgba(148,163,184,.15); padding:28px 0; color:var(--muted)}
 
-        /*JUMBOTRON*/
-        .jumbotron {
-            height: 100vh;
-            /*height to 100% of view height*/
-            background: #31b0d5;
-            /*background color to blue*/
-            margin-bottom: 0;
-            /*no bottom margin*/
-
-            display: flex;
-            flex-direction: column;
-        }
-
-        .jumbotron-text {
-            /*TAGLINE UNDER NAME*/
-            font-weight: 400;
-            font-size: 2em;
-            color: white;
-            text-align: center;
-            padding-top: 150px;
-        }
-
-        .jumbotron-text h1 {
-            /*YOUR NAME*/
-            text-transform: uppercase;
-            font-weight: 800;
-            font-size: 3em;
-            margin-bottom: 0;
-        }
-
-        .jumbotron-text p {
-            margin: 0;
-        }
-
-        /*SOCIAL LINKS*/
-        .ul-social {
-            text-align: center;
-            padding-left: 0;
-        }
-
-        .li-social-links {
-            display: inline-block;
-            list-style: none;
-        }
-
-        .social {
-            font-size: 2em;
-            color: white;
-            padding: 20px;
-        }
-
-        /*ARROW LINK*/
-        #down-arrow {
-            /*position: absolute;
-  width: 100%;*/
-            margin-top: auto;
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        #down-arrow a {
-            color: white;
-        }
-
-        /*CONTENT*/
-        .container {
-            /*sets up flexbox*/
-            display: flex;
-            flex-direction: column;
-        }
-
-        .row {
-            display: flex;
-        }
-
-        .white {
-            background: white;
-        }
-
-        .side-content {
-            flex: 0 0 16.6%;
-        }
-
-        .main-content {
-            flex: 0 0 66.6%;
-            margin-top: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .side-content-sm {
-            flex: 0 0 10%;
-        }
-
-        .main-content-lg {
-            flex: 0 0 80%;
-            margin-top: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .box-shadow {
-            -webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
-            -moz-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
-            box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
-        }
-
-        h2 {
-            font-weight: 200;
-            font-size: 2rem;
-            color: #31b0d5;
-            text-transform: uppercase;
-            text-align: center;
-        }
-
-        .content-body {
-            line-height: 1.5;
-            color: rgba(0, 0, 0, .75);
-        }
-
-        /*EDUCATION*/
-        .card {
-            display: flex;
-            flex-direction: column;
-            background-color: white;
-            border: 1px solid rgba(0, 0, 0, .125);
-            border-radius: .25rem;
-            margin-bottom: 30px;
-        }
-
-        .card-header {
-            padding: .75rem 1.25rem;
-            background-color: white;
-            border-bottom: 1px solid rgba(0, 0, 0, .075);
-            border-top-left-radius: .25rem;
-            border-top-right-radius: .25rem;
-        }
-
-        .card-content {
-            padding: .25rem 1.25rem;
-            flex: 1 1 auto;
-        }
-
-        h4 {
-            margin: 0;
-            font-weight: 400;
-            color: grey;
-        }
-
-        .job-title {
-            float: right;
-        }
-
-        /*PROJECTS*/
-        .project-card {
-            display: flex;
-            flex-direction: row;
-            background-color: white;
-            border: 1px solid rgba(0, 0, 0, .125);
-            border-radius: 5px;
-            margin-bottom: 30px;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08), 0 3px 6px rgba(0, 0, 0, 0.15);
-        }
-
-        .project-image {
-            flex: 1 0 auto;
-        }
-
-        .project-image img {
-            display: block;
-            border-top-left-radius: 5px;
-            border-bottom-left-radius: 5px;
-        }
-
-        .project-content {
-            flex: 1 1 auto;
-            padding: 1.25rem;
-
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-        }
-
-        /*SKILLS*/
-        .ul-skills {
-            text-align: center;
-            padding-left: 0;
-        }
-
-        .li-skills {
-            display: inline-block;
-            margin: 7px;
-            padding: 5px 10px;
-            color: white;
-            background: #2b2f30;
-            list-style: none;
-            cursor: default;
-            font-size: 1.2em;
-        }
-
-        /*CONTACT*/
-        .blue {
-            background: #3498db;
-            text-align: center;
-        }
-
-        .contact {
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .contact input,
-        .contact textarea {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            border-radius: 4px;
-            border: none;
-            margin-bottom: 10px;
-            background: #1d6fa5;
-            color: #fff;
-            -webkit-transition: .5s ease all;
-            transition: .5s ease all;
-        }
-
-        .contact textarea {
-            height: 150px;
-            resize: none;
-        }
-
-        .contact button {
-            display: block;
-            width: 100%;
-            background: #fff;
-            border-radius: 4px;
-            padding: 5px 10px;
-            border: none;
-            color: #3498db;
-            font-weight: 700;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-            -webkit-transition: .5s ease all;
-            transition: .5s ease all;
-        }
-
-        .white-text {
-            color: white;
-        }
-    </style>
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr}
+      .projects{grid-template-columns:1fr}
+    }
+  </style>
+  <script src="https://unpkg.com/i18next@23.10.0/i18next.min.js"></script>
 </head>
-
 <body>
-
-    <!-- BEGIN NAVBAR -->
-    <div class="navbar">
-        <a href="#about">Hakkında</a>
-        <a href="#experience">Deneyim</a>
-        <a href="#education">Eğitim</a>
-        <a href="#projects">Projeler</a>
-        <a href="#skills">Yetenekler</a>
-        <a href="#contact">İletişim</a>
-    </div>
-    <!-- END NAVBAR -->
-
+  <header>
     <div class="container">
+      <nav>
+        <div class="logo">hakancoskun</div>
+        <ul>
+          <li><a href="#about" data-i18n="nav.about"></a></li>
+          <li><a href="#experience" data-i18n="nav.experience"></a></li>
+          <li><a href="#projects" data-i18n="nav.projects"></a></li>
+          <li><a href="#contact" data-i18n="nav.contact"></a></li>
+        </ul>
+        <button id="langToggle" class="btn">TR</button>
+      </nav>
+    </div>
+  </header>
 
-        <!-- HEADER -->
-        <div class="jumbotron">
-            <div class="jumbotron-text">
-                <h1>Hakan Coşkun</h1>
-                <p>Yazılım Mühendisi</p>
-            </div>
-            <div class="jumbotron-social">
-                <ul class="ul-social">
-                    <li class="li-social-links">
-                        <a class="social" href="https://github.com/hakancoskun11" target="_blank"><i
-                                class="fa fa-github" aria-hidden="true"></i></a>
-                    </li>
-                    <li class="li-social-links">
-                        <a class="social" href="https://linkedin.com/in/hakancoskun11" target="_blank"><i
-                                class="fa fa-linkedin" aria-hidden="true"></i></a>
-                    </li>
-                </ul>
-            </div>
-            <div id="down-arrow">
-                <span><a href="#about"><i class="fa fa-chevron-down" aria-hidden="true"></i></a></span>
-            </div>
+  <main class="container">
+    <section class="hero">
+      <div>
+        <span class="badge" data-i18n="hero.badge"></span>
+        <h1 data-i18n="hero.title"></h1>
+        <p class="lead" data-i18n="hero.lead"></p>
+        <div class="cta">
+          <a class="btn primary" href="#projects">Projeleri Gör</a>
+          <a class="btn" href="#contact">İletişime Geç</a>
         </div>
-        <!-- END HEADER -->
+      </div>
+      <div class="card">
+        <h3>Odak Alanlarım</h3>
+        <ul class="muted">
+          <li>🔥Java & Spring Boot tabanlı backend sistemler</li>
+          <li>🧩 Mikroservis mimarileri & mesajlaşma sistemleri</li>
+          <li>🚀 Performans, güvenlik ve sürdürülebilir kod</li>
+        </ul>
+      </div>
+    </section>
 
+    <section id="about">
+      <h2 data-i18n="about.title"></h2>
+      <p class="muted" data-i18n="about.p1"></p>
+      <p class="muted" data-i18n="about.p2"></p>
+    </section>
 
-
-        <!-- BEGIN ABOUT -->
-        <div class="row white box-shadow">
-            <div class="side-content"></div>
-            <div class="main-content">
-                <div class="content-header">
-                    <a class="anchor" name="about"></a>
-                    <h2>Hakkında</h2>
-                </div>
-                <div class="content-body">
-                    <p>2021 yılında üniversite eğitimimi tamamlayarak bilgisayar mühendisliği hayatıma başladım.
-                        Üniversite hayatım boyunca çeşitli projelerde çalıştım.</p>
-                    <p>Şuanda bir yazılım firmasında yazılım geliştirme uzmanı olarak görev yapmaktayım. Gerek iş
-                        hayatında gerekse kişisel çalışmalarımda projeler geliştirirek kendimi geliştirmeye
-                        ve her gün yeni şeyler öğrenmeye çalışıyorum.
-                    </p>
-                </div>
-            </div>
-            <div class="side-content"></div>
+    <section id="experience">
+      <h2 data-i18n="experience.title"></h2>
+      <div class="grid">
+        <div class="card item">
+          <h3 data-i18n="experience.thy.title"></h3>
+          <p class="muted" data-i18n="experience.thy.date"></p>
+          <p class="muted" data-i18n="experience.thy.desc"></p>
         </div>
-        <!-- END ABOUT -->
+        <div class="card item">
+          <h3 data-i18n="experience.etstur.title"></h3>
+          <p class="muted" data-i18n="experience.etstur.date"></p>
+          <p class="muted" data-i18n="experience.etstur.desc"></p>
+        </div>
+        <div class="card item">
+          <h3 data-i18n="experience.etiya.title"></h3>
+          <p class="muted" data-i18n="experience.etiya.date"></p>
+          <p class="muted" data-i18n="experience.etiya.desc"></p>
+        </div>
+      </div>
+    </section>
 
-        <!-- BEGIN EXPERIENCE -->
-        <div class="row">
-            <div class="side-content"></div>
-            <div class="main-content">
-                <div class="content-header">
-                    <a class="anchor" name="experience"></a>
-                    <h2>Deneyim</h2>
-                </div>
-                <!-- CARD #1 -->
-                <div class="content-body">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>Etiya <span class="job-title">Yazılım Geliştirme Uzmanı</span></h4>
-                        </div>
-                        <div class="card-content">
-                            <p>
-                                Halihazırda devam ettiğim işimde yazılım danışmanlığını yaptığımız projedeki
-                                geliştirmeleri -frontent ve backend-, canlıya alımı ve yazılımsal desteği sağlamakla
-                                görevliyim.
-                                Biri ana projem olmak üzere iki farklı projede yazılım geliştirici olarak çalışıyorum.
-                            </p>
-                        </div>
-                    </div>
+    <section id="projects">
+      <h2 data-i18n="projects.title"></h2>
+      <div class="grid projects">
+        <div class="card project">
+          <h3>Crew Management Suite (CMS)</h3>
+          <p class="muted" data-i18n="projects.cms"></p>
+        </div>
+        <div class="card project">
+          <h3>ETSTUR Finance System</h3>
+          <p class="muted" data-i18n="projects.etstur"></p>
+        </div>
+        <div class="card project">
+          <h3>PRM – Türk Telekom</h3>
+          <p class="muted" data-i18n="projects.prm"></p>
+        </div>
+        <div class="card project">
+          <h3>AHBAP</h3>
+          <p class="muted" data-i18n="projects.ahbap"></p>
+        </div>
+      </div>
+    </section>
 
-                    <!-- CARD #2 -->
+    <section id="contact">
+      <h2>İletişim</h2>
+      <div class="card">
+        <p class="muted">Bana ulaş:</p>
+        <ul>
+          <li>📧 Email: <a href="mailto:hakancoskundev@gmail.com">hakancoskundev@gmail.com</a></li>
+          <li>💻 GitHub: <a href="https://github.com/hakancoskun11" target="_blank">github.com/hakancoskun11</a></li>
+          <li>🔗 LinkedIn: <a href="https://linkedin.com/in/hakancoskun11" target="_blank">linkedin.com/in/hakancoskun11</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
 
-                    <div class="card">
-                        <div class="card-header">
-                            <h4>Bakırköy Belediyesi <span class="job-title">Stajyer</span></h4>
-                        </div>
-                        <div class="card-content">
-                            <p>Bilgisayar Mühendisliği stajımı gerçekleştirdiğim iş yerinde Python dilini kullanarak web
-                                geliştirme ve script yazımı hakkında bir çok şey öğrendim.</p>
-                        </div>
-                    </div>
+  <footer>
+    <div class="container">© <span id="y"></span> Hakan Coşkun</div>
+  </footer>
 
+  <script>
+  document.getElementById('y').textContent = new Date().getFullYear();
 
-                    <!-- END EXPERIENCE -->
+  const resources = {
+    tr: {
+      translation: {
+        nav: { about: 'Hakkımda', experience: 'Deneyim', projects: 'Projeler', contact: 'İletişim' },
+        hero: {
+          badge: 'Software Developer • Java / Backend',
+          title: 'Merhaba, ben Hakan 👋',
+          lead: 'Kurumsal ölçekte ve yüksek trafikli sistemler geliştiren bir Java yazılım geliştiricisiyim.'
+        },
+        about: {
+          title: 'Ben Kimim',
+          p1: 'Bilgisayar Mühendisliği mezunu, kurumsal ve kritik sistemler geliştiren bir yazılım geliştiricisiyim.',
+          p2: 'Java, Spring Boot, mikroservis mimarileri ve mesajlaşma sistemleri üzerine çalışıyorum.'
+        },
+        experience: {
+          title: 'Deneyimler',
+          thy: {
+            title: 'Software Developer – Turkish Technology (THY)',
+            date: '2025 – Günümüz',
+            desc: 'Crew Management Suite (CMS) kapsamında kritik havacılık sistemlerinde görev alıyorum.'
+          },
+          etstur: {
+            title: 'Software Developer – ETSTUR',
+            date: '2024 – 2025',
+            desc: 'Muhasebe ve finans sistemlerinin geliştirildiği mikroservis projelerinde çalıştım.'
+          },
+          etiya: {
+            title: 'Software Development Specialist – ETİYA',
+            date: '2022 – 2024',
+            desc: 'Türk Telekom bayi yönetim sistemlerinde backend geliştirme yaptım.'
+          }
+        },
+        projects: {
+          title: 'Projeler',
+          cms: 'THY uçuş planlama ve operasyonel kaynak yönetim platformu.',
+          etstur: 'Muhasebe, faturalandırma ve GİB entegrasyonlarını içeren finans sistemi.',
+          prm: 'Türkiye genelinde kullanılan bayi yönetim platformu.',
+          ahbap: 'Gönüllü olarak katkı sağlanan sosyal sorumluluk projesi.'
+        }
+      }
+    },
+    en: {
+      translation: {
+        nav: { about: 'About', experience: 'Experience', projects: 'Projects', contact: 'Contact' },
+        hero: {
+          badge: 'Software Developer • Java / Backend',
+          title: 'Hi, I’m Hakan 👋',
+          lead: 'A Java software developer building large-scale, high-traffic enterprise systems.'
+        },
+        about: {
+          title: 'About Me',
+          p1: 'I am a Computer Engineering graduate focused on building mission-critical enterprise systems.',
+          p2: 'My expertise lies in Java, Spring Boot, microservices architectures, and messaging systems.'
+        },
+        experience: {
+          title: 'Experience',
+          thy: {
+            title: 'Software Developer – Turkish Technology (THY)',
+            date: '2025 – Present',
+            desc: 'Working on mission-critical aviation systems within the Crew Management Suite (CMS).'
+          },
+          etstur: {
+            title: 'Software Developer – ETSTUR',
+            date: '2024 – 2025',
+            desc: 'Developed microservice-based accounting and finance systems.'
+          },
+          etiya: {
+            title: 'Software Development Specialist – ETİYA',
+            date: '2022 – 2024',
+            desc: 'Backend development for large-scale dealer management systems.'
+          }
+        },
+        projects: {
+          title: 'Projects',
+          cms: 'A core platform managing flight planning and operational resources for Turkish Airlines.',
+          etstur: 'High-traffic finance system with accounting and invoicing capabilities.',
+          prm: 'Nationwide dealer management platform for Türk Telekom.',
+          ahbap: 'A voluntary social responsibility project for managing aid processes.'
+        }
+      }
+    }
+  };
 
-                    <!-- BEGIN EDUCATION -->
-                    <div class="row white box-shadow">
-                        <div class="side-content"></div>
-                        <div class="main-content">
-                            <div class="content-header">
-                                <a class="anchor" name="education"></a>
-                                <h2>Eğitim</h2>
-                            </div>
-                            <div class="content-body">
+  i18next.init({ lng: 'tr', resources }, updateContent);
 
-                                <!-- EDUCATION 1 -->
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h4>Tekirdağ Namık Kemal Üniversitesi <span class="job-title">2021</span></h4>
-                                    </div>
-                                    <div class="card-content">
-                                        <p>Bilgisayar Mühendisliği lisans eğitimimi tamamladım.</p>
-                                    </div>
-                                </div>
-                                <!-- EDUCATION 2 -->
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h4>Mehmet Niyazi Altuğ Anadolu Lisesi <span class="job-title">2017</span></h4>
-                                    </div>
-                                    <div class="card-content">
-                                        <p>Lise eğitimimi tamamladım.</p>
-                                    </div>
-                                </div>
+  function updateContent() {
+    document.documentElement.lang = i18next.language;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      el.innerHTML = i18next.t(el.dataset.i18n);
+    });
+  }
 
-                            </div>
-                        </div>
-                        <div class="side-content"></div>
-                    </div>
-                    <!-- END EDUCATION -->
-
-                    <!-- BEGIN PROJECTS -->
-                    <div class="row">
-                        <div class="side-content-sm"></div>
-                        <div class="main-content-lg">
-                            <div class="content-header">
-                                <a class="anchor" name="projects"></a>
-                                <h2>Projeler</h2>
-                            </div>
-                            <div class="content-body">
-                                <!-- CARD #1 -->
-                                <div class="project-card">
-                                    <div class="project-image">
-                                        <img src="http://placehold.it/250x350">
-                                    </div>
-                                    <div class="project-content">
-                                        <h4>PRM</h4>
-                                        <p>Geliştirmesinde ve bakımında rol aldığım PRM (Partner Relation Management) projesi Etiya bünyesinde çalıştığımız Turk Telekom' a ait olan 
-                                            bir bayi yönetim sistemidir. Proje kapsamında Türkiyedeki tüm Turk Telekom bayilerinin yönetimi sağlanmaktadır. Proje ekstadan 50' ye yakın projeyle 
-                                            de entegre olarak çalışmaktadır. 
-                                        </p>
-                                        <i>Kullanılan Teknolojiler: Java, Oracle, ZK Framework, Soap, Spring, Maven, Git </i>
-                                    </div>
-                                </div>
-                                <!-- CARD #2 -->
-                                <div class="project-card">
-                                    <div class="project-image">
-                                        <img src="http://placehold.it/250x350">
-                                    </div>
-                                    <div class="project-content">
-                                        <h4>Comment App</h4>
-                                        <p>Yorum paylaşımı yapmak üzerine bir sosyal paylaşım sitesi.
-                                        </p>
-                                        <i>Kullanılan Teknolojiler: Java, Spring Boot, Javascript, React, Html, Css, Mysql, Git </i>
-                                    </div>
-                                </div>
-                                <!-- CARD #3 -->
-                                <div class="project-card">
-                                    <div class="project-image">
-                                        <img src="http://placehold.it/250x350">
-                                    </div>
-                                    <div class="project-content">
-                                        <h4>Haber Sitesi Arama Motoru</h4>
-                                        <p>
-                                            İnternetteki seçtiğim haber sitelerindeki haberler üzerinde arama yapan bir haber sitesi arama motoru.
-                                        </p>
-                                        <i>Kullanılan Teknolojiler: Python, Django, ElasticSearch, Rss, Json</i>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="side-content-sm"></div>
-                    </div>
-                    <!-- END PROJECTS -->
-
-                    <!-- BEGIN SKILLS -->
-                    <div class="row white box-shadow">
-                        <div class="side-content"></div>
-                        <div class="main-content">
-                            <div class="content-header">
-                                <a class="anchor" name="skills"></a>
-                                <h2>Yetenekler</h2>
-                            </div>
-                            <div class="content-body">
-                                <ul class="ul-skills">
-                                    <li class="li-skills">Java</li>
-                                    <li class="li-skills">Spring Boot</li>
-                                    <li class="li-skills">Oracle</li>
-                                    <li class="li-skills">Sql</li>
-                                    <li class="li-skills">Html</li>
-                                    <li class="li-skills">CSS</li>
-                                    <li class="li-skills">Javascript</li>
-                                    <li class="li-skills">React</li>
-                                    <li class="li-skills">Aspnet.Core MVC</li>
-                                    <li class="li-skills">Flutter</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="side-content"></div>
-                    </div>
-                    <!-- END SKILLS -->
-
-                    <!-- BEGIN CONTACT -->
-
-                    <div class="row blue">
-                        <div class="side-content"></div>
-                        <div class="main-content">
-                            <div class="content-header">
-                                <a class="anchor" name="contact"></a>
-                                <h2 class="white-text">İletişim</h2>
-                            </div>
-                            <div class="jumbotron-social">
-                                <ul class="ul-social">
-                                    <li class="li-social-links">
-                                        <a class="social" href="mailto: hakancoskundev@gmail.com"
-                                            target="_blank"><i class="fa fa-google" aria-hidden="true"></i></a>
-                                    </li>
-                                    <li class="li-social-links">
-                                        <a class="social" href="https://linkedin.com/in/hakancoskun11"
-                                            target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="side-content"></div>
-                    </div>
-                    <!-- END CONTACT -->
-
-                    <!-- BEGIN FOOTER -->
-                    <div class="row">
-                        <div class="side-content"></div>
-                        <div class="main-content">
-                            <div class="content-header">
-                            </div>
-                            <div class="content-body">
-                                <p>HAKAN COŞKUN 2022</p>
-                            </div>
-                        </div>
-                        <div class="side-content"></div>
-                    </div>
-                    <!-- END FOOTER -->
-
-                </div>
+  const toggleBtn = document.getElementById('langToggle');
+  toggleBtn.addEventListener('click', () => {
+    const newLang = i18next.language === 'tr' ? 'en' : 'tr';
+    i18next.changeLanguage(newLang, () => {
+      toggleBtn.textContent = newLang.toUpperCase();
+      updateContent();
+    });
+  });
+</script>
 </body>
-
 </html>

@@ -89,11 +89,11 @@
         </div>
       </div>
       <div class="card">
-        <h3>Odak Alanlarım</h3>
+        <h3 data-i18n="focus.title"></h3>
         <ul class="muted">
-          <li>🔥Java & Spring Boot tabanlı backend sistemler</li>
-          <li>🧩 Mikroservis mimarileri & mesajlaşma sistemleri</li>
-          <li>🚀 Performans, güvenlik ve sürdürülebilir kod</li>
+          <li data-i18n="focus.f1"></li>
+          <li data-i18n="focus.f2"></li>
+          <li data-i18n="focus.f3"></li>
         </ul>
       </div>
     </section>
@@ -128,22 +128,41 @@
     <section id="projects">
       <h2 data-i18n="projects.title"></h2>
       <div class="grid projects">
+
         <div class="card project">
-          <h3>Crew Management Suite (CMS)</h3>
+          <h3>⭐ Crew Management Suite (CMS) – Turkish Airlines</h3>
           <p class="muted" data-i18n="projects.cms"></p>
+          <p class="muted" data-i18n="projects.cms_importance"></p>
+          <div class="tags">
+            <span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">Quarkus</span><span class="tag">Kafka</span><span class="tag">IBM MQ</span><span class="tag">Oracle</span><span class="tag">Couchbase</span><span class="tag">Python</span><span class="tag">Linux</span><span class="tag">Oracle</span>
+          </div>
         </div>
+
         <div class="card project">
-          <h3>ETSTUR Finance System</h3>
+          <h3>⭐ ETSTUR Muhasebe & Finans Sistemi</h3>
           <p class="muted" data-i18n="projects.etstur"></p>
+          <p class="muted" data-i18n="projects.etstur_importance"></p>
+          <div class="tags">
+            <span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">Kafka</span><span class="tag">Redis</span><span class="tag">Oracle</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span><span class="tag">Plsql</span>
+          </div>
         </div>
+
         <div class="card project">
-          <h3>PRM – Türk Telekom</h3>
+          <h3>PRM – Türk Telekom Bayi Yönetim Sistemi</h3>
           <p class="muted" data-i18n="projects.prm"></p>
+          <div class="tags">
+            <span class="tag">Java</span><span class="tag">REST</span><span class="tag">SOAP</span><span class="tag">RabbitMQ</span><span class="tag">Oracle</span><span class="tag">Plsql</span><span class="tag">Sql</span><span class="tag">Javascript</span>
+          </div>
         </div>
+
         <div class="card project">
-          <h3>AHBAP</h3>
+          <h3>AHBAP – Gönüllü Destek Sistemi</h3>
           <p class="muted" data-i18n="projects.ahbap"></p>
+          <div class="tags">
+            <span class="tag">C#</span><span class="tag">.NET</span>
+          </div>
         </div>
+
       </div>
     </section>
 
@@ -155,6 +174,7 @@
           <li>📧 Email: <a href="mailto:hakancoskundev@gmail.com">hakancoskundev@gmail.com</a></li>
           <li>💻 GitHub: <a href="https://github.com/hakancoskun11" target="_blank">github.com/hakancoskun11</a></li>
           <li>🔗 LinkedIn: <a href="https://linkedin.com/in/hakancoskun11" target="_blank">linkedin.com/in/hakancoskun11</a></li>
+          <li>✍️ Medium: <a href="https://medium.com/@hakancoskundev" target="_blank">medium.com/@hakancoskundev</a></li>
         </ul>
       </div>
     </section>
@@ -176,35 +196,43 @@
           title: 'Merhaba, ben Hakan 👋',
           lead: 'Kurumsal ölçekte ve yüksek trafikli sistemler geliştiren bir Java yazılım geliştiricisiyim.'
         },
+        focus: {
+          title: 'Odak Alanlarım',
+          f1: 'Java & Spring Boot tabanlı kurumsal backend sistemler',
+          f2: 'Mikroservis mimarileri ve mesajlaşma altyapıları',
+          f3: 'Performans, güvenlik ve sürdürülebilir yazılım'
+        },
         about: {
           title: 'Ben Kimim',
-          p1: 'Bilgisayar Mühendisliği mezunu, kurumsal ve kritik sistemler geliştiren bir yazılım geliştiricisiyim.',
-          p2: 'Java, Spring Boot, mikroservis mimarileri ve mesajlaşma sistemleri üzerine çalışıyorum.'
+          p1: 'Bilgisayar Mühendisliği mezunu, yazılım ve teknoloji tutkunu, havacılık, turizm ve telekom sektörlerinde kurumsal sistemler geliştiren bir yazılım geliştiricisiyim.',
+          p2: 'Java, Spring Boot, mikroservis mimarileri, mesajlaşma sistemleri ve CI/CD süreçleri üzerine çalışıyorum.'
         },
         experience: {
           title: 'Deneyimler',
           thy: {
             title: 'Software Developer – Turkish Technology (THY)',
             date: '2025 – Günümüz',
-            desc: 'Crew Management Suite (CMS) kapsamında kritik havacılık sistemlerinde görev alıyorum.'
+            desc: 'Crew Management Suite (CMS) kapsamında, uçuş planlama ve operasyonel kaynak yönetimi yapan kritik sistemlerde aktif rol alıyorum.'
           },
           etstur: {
             title: 'Software Developer – ETSTUR',
             date: '2024 – 2025',
-            desc: 'Muhasebe ve finans sistemlerinin geliştirildiği mikroservis projelerinde çalıştım.'
+            desc: 'Muhasebe ve finans sistemlerinin geliştirildiği mikroservis tabanlı backend projelerinde görev aldım.'
           },
           etiya: {
             title: 'Software Development Specialist – ETİYA',
             date: '2022 – 2024',
-            desc: 'Türk Telekom bayi yönetim sistemlerinde backend geliştirme yaptım.'
+            desc: 'Türk Telekom bayi yönetim sistemlerinde Rest/Soap servisler ve mesajlaşma altyapıları ile çalışan uygulamalar geliştirdim.'
           }
         },
         projects: {
           title: 'Projeler',
-          cms: 'THY uçuş planlama ve operasyonel kaynak yönetim platformu.',
-          etstur: 'Muhasebe, faturalandırma ve GİB entegrasyonlarını içeren finans sistemi.',
-          prm: 'Türkiye genelinde kullanılan bayi yönetim platformu.',
-          ahbap: 'Gönüllü olarak katkı sağlanan sosyal sorumluluk projesi.'
+          cms: 'Türk Hava Yolları’nın uçuş planlama, mürettebat yönetimi ve operasyonel koordinasyon süreçlerini merkezî olarak yöneten kurumsal platform.',
+          cms_importance: 'Bu proje, THY operasyonlarının sürekliliği açısından stratejik öneme sahiptir ve kurumun operasyonel kalbi olarak kabul edilir.',
+          etstur: 'Muhasebe, raporlama, faturalandırma ve GİB entegrasyonlarını içeren yüksek trafikli finans uygulaması.',
+          etstur_importance: 'Finansal verilerin doğruluğu ve performansı açısından kritik bir sistemdir.',
+          prm: 'Türkiye genelinde kullanılan, çok sayıda servis ve kuyruk sistemiyle entegre bayi yönetim platformu.',
+          ahbap: 'Gönüllü olarak katkı sağladığım, yardım ve bağış süreçlerini yöneten sosyal sorumluluk projesi.'
         }
       }
     },
@@ -216,35 +244,43 @@
           title: 'Hi, I’m Hakan 👋',
           lead: 'A Java software developer building large-scale, high-traffic enterprise systems.'
         },
+        focus: {
+          title: 'Focus Areas',
+          f1: 'Enterprise backend systems with Java & Spring Boot',
+          f2: 'Microservices architectures and messaging infrastructures',
+          f3: 'Performance, security, and maintainable software'
+        },
         about: {
           title: 'About Me',
-          p1: 'I am a Computer Engineering graduate focused on building mission-critical enterprise systems.',
-          p2: 'My expertise lies in Java, Spring Boot, microservices architectures, and messaging systems.'
+          p1: 'I am a Computer Engineering graduate with experience in aviation, tourism, and telecommunications domains.',
+          p2: 'My main focus areas include Java, Spring Boot, microservices architectures, messaging systems, and CI/CD pipelines.'
         },
         experience: {
           title: 'Experience',
           thy: {
             title: 'Software Developer – Turkish Technology (THY)',
             date: '2025 – Present',
-            desc: 'Working on mission-critical aviation systems within the Crew Management Suite (CMS).'
+            desc: 'Actively working on mission-critical systems responsible for flight planning and operational resource management within CMS.'
           },
           etstur: {
             title: 'Software Developer – ETSTUR',
             date: '2024 – 2025',
-            desc: 'Developed microservice-based accounting and finance systems.'
+            desc: 'Worked on microservice-based backend systems handling accounting and finance operations.'
           },
           etiya: {
             title: 'Software Development Specialist – ETİYA',
             date: '2022 – 2024',
-            desc: 'Backend development for large-scale dealer management systems.'
+            desc: 'Developed enterprise applications integrated with REST/SOAP services and messaging systems for Türk Telekom.'
           }
         },
         projects: {
           title: 'Projects',
-          cms: 'A core platform managing flight planning and operational resources for Turkish Airlines.',
-          etstur: 'High-traffic finance system with accounting and invoicing capabilities.',
-          prm: 'Nationwide dealer management platform for Türk Telekom.',
-          ahbap: 'A voluntary social responsibility project for managing aid processes.'
+          cms: 'A centralized enterprise platform managing flight planning, crew operations, and operational coordination for Turkish Airlines.',
+          cms_importance: 'This system is considered the operational backbone of Turkish Airlines and is critical for business continuity.',
+          etstur: 'A high-traffic financial application handling accounting, invoicing, reporting, and government integrations.',
+          etstur_importance: 'A business-critical system ensuring financial accuracy and performance.',
+          prm: 'A nationwide dealer management platform integrated with multiple services and message queues.',
+          ahbap: 'A voluntary social responsibility project developed to manage aid and donation processes.'
         }
       }
     }
